@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<section id="main" class="py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center font-weight-bold">Update Profile</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form [formGroup]="updateProfileForm" novalidate class="p-3">
+            <label for="fullName">First Name</label>
+            <input placeholder="Enter First Name" class="form-control" formControlName="firstName" value="{{profileData?.firstName}}"  autocomplete="off" />
+
+            <label for="fullName">Last Name</label>
+            <input placeholder="Enter Last Name" class="form-control" formControlName="lastName" value="{{profileData?.lastName}}" autocomplete="off" />
+
+            <label for="image" class="mr-sm-2">Profile Image:</label>
+            <input type="file" placeholder="Enter Email" class="form-control mb-2 mr-sm-2" id="image" formControlName="image" (change)="onFileChange($event)" />
+
+            <button type="submit" [disabled]="!updateProfileForm.valid" class="btn btn-primary mb-2" (click)="submit(updateProfileForm)">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,32 @@
+<!-- Sidebar navigation -->
+<nav class="navbar-expand-lg navbar-light bg-green"> 
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">                      
+                <ul class="navbar-nav w-100">
+                    <li class="nav-item" routerLinkActive="active">
+                      <a class="nav-link" routerLink="">
+                        Profile
+                      </a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" routerLink="/client-list">
+                          Client List
+                        </a>
+                      </li>
+                      <li class="nav-item" routerLinkActive="active">
+                          <a class="nav-link" routerLink="/appointment-list">
+                            Appointment List
+                          </a>
+                        </li>
+                    <!-- Calling SignOut() Api from AuthService -->
+                    <li class="nav-item ml-auto mr-0">
+                      <a class="nav-link" (click)="SignOut()">
+                        <i class="fas fa-sign-out-alt"></i>Log out
+                      </a>
+                    </li>
+                  </ul>
+              </div>  
+            </div> 
+          </div>   
+       </nav>

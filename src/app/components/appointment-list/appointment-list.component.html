@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<section id="main" class="py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-left;font-weight-bold">Appointment List</h3>
+        <span class="float-right"><a routerLink="/schedule-appointment"><i class="glyphicon glyphicon-plus"></i>Schedule New Appointment</a></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+          <form [formGroup]="searchForm">
+          <select name="clientId" formControlName="clientId"  (change)="getAppointmentList(searchForm)" class="form-control">
+              <option>Select Client</option>
+              <option *ngFor="let client of clientList" [value]="client.clientId">{{client.firstName}}</option>
+            </select>
+            </form>
+        </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <!-- <th>Client Name</th> -->
+          <th>Date Time</th>
+        </tr>
+        <tr *ngFor="let item of appointmentList">
+          <td>{{item?.title}}</td>
+          <td>{{item?.description}}</td>
+          <!-- <td>{{item?.email}}</td> -->
+          <td>{{item.dateTime | date:'medium'}}</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</section>

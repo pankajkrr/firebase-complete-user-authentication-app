@@ -1,0 +1,4 @@
+.table-bordered td, .table-bordered th {
+    border: 0px solid #dee2e6 !important;
+}
+.edit-Icon{font-size:20px; color:#333; margin-left:5px}

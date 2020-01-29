@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+  
+      <div class="col-md-6 offset-md-3 page-wrapper">
+        <h3 class="text-center">Thank You for Registering</h3>
+  
+        <div class="formGroup" *ngIf="_firebase.userData as user">
+          <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
+          <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
+        </div>
+        
+        <!-- Calling SendVerificationMail() method using authService Api -->
+        <div class="formGroup">
+          <button type="button" class="btn btnPrimary">
+            <i class="fas fa-redo-alt"></i>
+            Resend Verification Email
+          </button>
+        </div>
+        <div class="text-center">
+            <span>Go back to?<a class="redirect" routerLink="/login"> Login</a></span>
+        </div>
+
+      </div>
+  
+      <!-- <div class="redirectToLogin">
+      </div> -->
+  
+    </div>
+  </div>

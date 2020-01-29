@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 page-wrapper">
+      <h2 class="text-center page-header">Login</h2>
+
+        <!-- Page Logo -->
+        <div class="imgcontainer">
+          <img alt="Avatar" src="../../../assets/img/dummy-logo.png" class="avatar">
+        </div>
+  
+        <!-- Login Form -->
+        <form [formGroup]="loginForm" novalidate class="p-3">
+          <div>
+            <label for="uname">Email</label>
+            <input placeholder="Enter Email" class="form-control" formControlName="email" autocomplete="off"/>
+      
+            <label for="psw">Password</label>
+            <input type="password" placeholder="Enter Password" class="form-control" formControlName="password" autocomplete="off"/>
+      
+            <button [disabled]="!loginForm.valid" type="button" (click)="submit(loginForm)">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+        </form>
+          
+        <div>
+          <span class="have-acccount-sec">Not having an Account? <a routerLink="../register">Register</a></span>
+        </div>
+  
+      <div>
+        <div class="text-right mb-1">
+          <span>
+            <a routerLink="../forgot-password">Forgot Password?</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
